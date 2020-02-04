@@ -1,20 +1,16 @@
-<mat-toolbar color="primary">Awesome toolbar</mat-toolbar>
-<h1>
-  {{title}}
-</h1>
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <button mat-icon-button>
+      <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
+    </button>
+    <h1>News Bulletin</h1>
+    <span class="menu-spacer"></span>
+    <div>
+      <a mat-button [routerLink]="'/home'"> Home </a>
+      <a mat-button [routerLink]="'/world'"> World </a>
+      <a mat-button [routerLink]="'/india'"> India </a>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
 
-<mat-form-field>
-  <input matInput placeholder="Simple Input" [(ngModel)]="title">
-</mat-form-field>
-
-<mat-icon>home</mat-icon>
-
-<button mat-raised-button>I'm a button</button>
-
-<mat-form-field>
-  <mat-select placeholder="I'm a select" [(ngModel)]="selectedValue">
-    <mat-option *ngFor="let item of items" [value]="item.value">
-      {{item.view}}
-    </mat-option>
-  </mat-select>
-</mat-form-field>
+<router-outlet></router-outlet>
